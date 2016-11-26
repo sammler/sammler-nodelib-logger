@@ -1,6 +1,6 @@
 import * as winston from 'winston';
 
-export class Logger {
+export default class Logger {
   constructor() {
     this.winston = new ( winston.Logger )( {
       level: 'silly',
@@ -13,8 +13,8 @@ export class Logger {
   }
 
   // Lowest level
-  silly( message, arg1, arg2 ) {
-    this.winston.silly( message, arg1, arg2 );
+  silly( message, ...args ) {
+    this.winston.silly( message, ...args );
   }
 
   debug( message ) {

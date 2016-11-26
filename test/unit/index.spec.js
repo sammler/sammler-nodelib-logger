@@ -1,6 +1,6 @@
 /*global describe, expect, it, beforeEach*/
 
-import { Logger } from './../../src/index';
+import Logger from './../../src/index';
 
 let logger = new Logger();
 
