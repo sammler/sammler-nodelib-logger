@@ -1,5 +1,8 @@
 /*global describe, expect, it, beforeEach*/
-import logger from './../../src/index';
+
+import { Logger } from './../../src/index';
+
+let logger = new Logger();
 
 describe( 'unit', () => {
 
