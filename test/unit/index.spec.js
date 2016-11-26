@@ -1,11 +1,12 @@
 /*global describe, expect, it, beforeEach*/
+import logger from './../../src/index';
 
-describe( 'unit:Person', () => {
+describe( 'unit', () => {
 
-  let idx;
-  beforeEach( () => {
+  it( 'bla', () => {
+    logger.silly( 'bla' );
+    logger.silly( 'obj', { foo: 'bar' } );
+    expect( true ).to.be.true;
   } );
-
-
 
 } );
