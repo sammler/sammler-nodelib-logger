@@ -6,23 +6,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _winston2 = require('winston');
+var _winston6 = require('winston');
 
-var winston = _interopRequireWildcard(_winston2);
+var winston = _interopRequireWildcard(_winston6);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var defaultOpts = {
+  name: 'debug-console',
+  level: 'silly',
+  colorize: true,
+  prettyPrint: function prettyPrint(object) {
+    return JSON.stringify(object, null, 2);
+  },
+  handleExceptions: true,
+  json: false
+};
 
 var Logger = function () {
   function Logger() {
     _classCallCheck(this, Logger);
 
     this.winston = new winston.Logger({
-      level: 'silly',
-      transports: [new winston.transports.Console()],
-      colorize: true,
-      prettyPrint: true
+      transports: [new winston.transports.Console(defaultOpts)]
     });
   }
 
@@ -43,22 +51,46 @@ var Logger = function () {
   }, {
     key: 'debug',
     value: function debug(message) {
-      this.winston.debug(message);
+      var _winston2;
+
+      for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
+      }
+
+      (_winston2 = this.winston).debug.apply(_winston2, [message].concat(args));
     }
   }, {
     key: 'verbose',
     value: function verbose(message) {
-      this.winston.verbose(message);
+      var _winston3;
+
+      for (var _len3 = arguments.length, args = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+        args[_key3 - 1] = arguments[_key3];
+      }
+
+      (_winston3 = this.winston).verbose.apply(_winston3, [message].concat(args));
     }
   }, {
     key: 'info',
     value: function info(message) {
-      this.winston.info(message);
+      var _winston4;
+
+      for (var _len4 = arguments.length, args = Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+        args[_key4 - 1] = arguments[_key4];
+      }
+
+      (_winston4 = this.winston).info.apply(_winston4, [message].concat(args));
     }
   }, {
     key: 'warn',
     value: function warn(message) {
-      this.winston.warn(message);
+      var _winston5;
+
+      for (var _len5 = arguments.length, args = Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
+        args[_key5 - 1] = arguments[_key5];
+      }
+
+      (_winston5 = this.winston).warn.apply(_winston5, [message].concat(args));
     }
 
     // Highest level

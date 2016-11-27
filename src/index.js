@@ -1,14 +1,22 @@
 import * as winston from 'winston';
 
+let defaultOpts = {
+  name: 'debug-console',
+  level: 'silly',
+  colorize: true,
+  prettyPrint: function( object ) {
+    return JSON.stringify( object, null, 2 );
+  },
+  handleExceptions: true,
+  json: false
+};
+
 export default class Logger {
   constructor() {
-    this.winston = new ( winston.Logger )( {
-      level: 'silly',
+    this.winston = new winston.Logger( {
       transports: [
-        new ( winston.transports.Console )()
-      ],
-      colorize: true,
-      prettyPrint: true
+        new winston.transports.Console( defaultOpts )
+      ]
     } );
   }
 
@@ -17,20 +25,20 @@ export default class Logger {
     this.winston.silly( message, ...args );
   }
 
-  debug( message ) {
-    this.winston.debug( message );
+  debug( message, ...args ) {
+    this.winston.debug( message, ...args );
   }
 
-  verbose( message ) {
-    this.winston.verbose( message );
+  verbose( message, ...args ) {
+    this.winston.verbose( message, ...args );
   }
 
-  info( message ) {
-    this.winston.info( message );
+  info( message, ...args ) {
+    this.winston.info( message, ...args );
   }
 
-  warn( message ) {
-    this.winston.warn( message );
+  warn( message, ...args ) {
+    this.winston.warn( message, ...args );
   }
 
   // Highest level
