@@ -1,6 +1,6 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Node.js logging lib for sammler.",
   "keywords": [
     "boilerplate",
