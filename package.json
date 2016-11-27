@@ -1,6 +1,6 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Node.js logging lib for sammler.",
   "keywords": [
     "boilerplate",
@@ -34,7 +34,9 @@
     "test:integration": "npm run lint && mocha './test/integration/**/*.spec.js' --compilers js:babel-core/register --require './test/mocha.conf.js'",
     "test:unit": "mocha './test/unit/**/*.spec.js' --compilers js:babel-core/register --require './test/mocha.conf.js'"
   },
-  "dependencies": {},
+  "dependencies": {
+    "winston": "^2.3.0"
+  },
   "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-plugin-istanbul": "^1.0.3",
@@ -49,8 +51,7 @@
     "gulp-format-md": "*",
     "gulp-sourcemaps": "^1.6.0",
     "mocha": "*",
-    "nyc": "^7.0.0",
-    "winston": "^2.3.0"
+    "nyc": "^7.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
