@@ -1,6 +1,6 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js logging lib for sammler.",
   "keywords": [
     "es6",
@@ -24,6 +24,7 @@
   "main": "/dist/index.js",
   "repository": "sammler/sammler-nodelib-logger",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "gulp build",
     "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha",
     "docs": "verb",
