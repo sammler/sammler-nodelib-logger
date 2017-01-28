@@ -1,15 +1,15 @@
-/*global describe, expect, it, beforeEach*/
+/* global describe, expect, it, beforeEach */
 
-import Logger from './../../src/index';
+const Logger = require('./../../src/index');
 
-let logger = new Logger();
+const logger = new Logger();
 
-describe( 'unit', () => {
+describe('unit', () => {
 
-  it( 'bla', () => {
-    logger.silly( 'bla' );
-    logger.silly( 'obj', { foo: 'bar' } );
-    expect( true ).to.be.true;
-  } );
+  it('bla', () => {
+    logger.silly('bla');
+    logger.silly('obj', {foo: 'bar'});
+    expect(true).to.be.true;
+  });
 
-} );
+});
