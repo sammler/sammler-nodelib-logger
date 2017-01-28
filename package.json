@@ -19,7 +19,7 @@
     "twitter": "waltherstefan"
   },
   "files": [
-    "/dist"
+    "/src"
   ],
   "main": "./index.js",
   "repository": "sammler/sammler-nodelib-logger",
