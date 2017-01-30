@@ -1,9 +1,10 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Node.js logging settings for node.js services.",
   "keywords": [
-    "sammler"
+    "sammler",
+    "sammler-nodelib"
   ],
   "homepage": "https://github.com/sammler/sammler-nodelib-logger",
   "bugs": {
@@ -47,7 +48,7 @@
     "mocha": "*"
   },
   "engines": {
-    "node": ">=7.2.0"
+    "node": ">=6.0.0"
   },
   "nyc": {
     "sourceMap": false,
