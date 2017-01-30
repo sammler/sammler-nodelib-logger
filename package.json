@@ -1,12 +1,9 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.1.4",
-  "description": "Node.js logging lib for sammler.",
+  "version": "0.2.0",
+  "description": "Node.js logging settings for node.js services.",
   "keywords": [
-    "boilerplate",
-    "ecma2015",
-    "es6",
-    "gulp"
+    "sammler"
   ],
   "homepage": "https://github.com/sammler/sammler-nodelib-logger",
   "bugs": {
@@ -19,12 +16,13 @@
     "twitter": "waltherstefan"
   },
   "files": [
+    "index.js",
     "/src"
   ],
   "main": "./index.js",
   "repository": "sammler/sammler-nodelib-logger",
   "scripts": {
-    "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha",
+    "coverage": "./node_modules/.bin/isparta cover _mocha",
     "docs": "verb",
     "lint": "yarn run lint:src && yarn run lint:test",
     "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
@@ -32,23 +30,21 @@
     "lint:src:fix": "eslint src --fix",
     "lint:test": "eslint test",
     "lint:test:fix": "eslint test --fix",
-    "prepublish": "npm run build",
     "test": "yarn run lint && yarn run test:unit && yarn run test:integration",
     "test:integration": "yarn run lint && mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js'",
     "test:unit": "mocha './test/unit/**/*.spec.js' --compilers --require './test/mocha.conf.js'"
   },
   "dependencies": {
-    "winston": "^2.3.1"
+    "amqp-winston": "^1.0.7",
+    "winster": "^0.2.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "del": "^2.2.2",
     "eslint": "^3.1.1",
     "eslint-config-sammler": "^0.0.4",
     "eslint-plugin-mocha": "^4.0.0",
     "gulp-format-md": "*",
-    "mocha": "*",
-    "nyc": "^7.0.0"
+    "mocha": "*"
   },
   "engines": {
     "node": ">=7.2.0"
