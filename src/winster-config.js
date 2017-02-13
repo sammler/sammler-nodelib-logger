@@ -34,6 +34,7 @@ module.exports = {
       transporter: Winston.transports.File,
       options: {
         name: 'File-Prod',
+        level: 'trace',
         filename: 'log-prod.log'
       }
     }
@@ -43,7 +44,9 @@ module.exports = {
       transporter: Winston.transports.File,
       options: {
         name: 'File-Test',
-        filename: 'log-test.log'
+        level: 'trace',
+        filename: 'log-test.log',
+        handleExceptions: true
       }
     }
   ]
