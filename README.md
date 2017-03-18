@@ -1,5 +1,7 @@
 # sammler-nodelib-logger
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sammler/sammler-nodelib-logger.svg)](https://greenkeeper.io/)
+
 > Node.js logging settings for node.js services.
 
 ## Author
