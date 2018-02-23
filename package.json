@@ -24,25 +24,25 @@
   "repository": "sammler/sammler-nodelib-logger",
   "scripts": {
     "coverage": "./node_modules/.bin/isparta cover _mocha",
-    "docs": "verb",
-    "lint": "yarn run lint:src && yarn run lint:test",
-    "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
+    "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb",
+    "lint": "npm run lint:src && npm run lint:test",
+    "lint:fix": "npm run lint:src:fix && npm run lint:test:fix",
     "lint:src": "eslint src",
     "lint:src:fix": "eslint src --fix",
     "lint:test": "eslint test",
     "lint:test:fix": "eslint test --fix",
-    "test": "yarn run lint && yarn run test:unit && yarn run test:integration",
-    "test:integration": "yarn run lint && mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js'",
-    "test:unit": "mocha './test/unit/**/*.spec.js' --compilers --require './test/mocha.conf.js'"
+    "test": "npm run lint && npm run test:unit && npm run test:integration",
+    "test:integration": "npm run lint && mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js'",
+    "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'"
   },
   "dependencies": {
     "amqp-winston": "^1.0.7",
     "winster": "^0.2.5"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.1.1",
-    "eslint-config-sammler": "^0.0.4",
+    "chai": "^4.1.2",
+    "eslint": "^4.18.1",
+    "eslint-config-space-single": "^0.3.1",
     "eslint-plugin-mocha": "^4.0.0",
     "gulp-format-md": "*",
     "mocha": "*"
