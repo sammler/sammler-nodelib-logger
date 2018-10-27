@@ -1,6 +1,6 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Node.js logging settings for node.js services.",
   "keywords": [
     "sammler",
@@ -36,7 +36,6 @@
     "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'"
   },
   "dependencies": {
-    "amqp-winston": "^1.0.7",
     "winster": "^0.2.5"
   },
   "devDependencies": {
