@@ -1,6 +1,6 @@
 {
   "name": "sammler-nodelib-logger",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Node.js logging settings for node.js services.",
   "keywords": [
     "sammler",
